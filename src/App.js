@@ -1,9 +1,14 @@
 import React from "react";
-import logo from "./logo.svg";
+
+import "bulma/css/bulma.css";
 import "./App.css";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import { fakeInterests, fakeSkills } from "./dummy-data";
-import Login from "./Login";
+
+import Home from "./components/Home";
+import Login from "./components/Login";
+import ProtectedRoute from "./components/ProtectedRoute";
 
 function App() {
   console.log("test return", fakeInterests);
@@ -11,11 +16,8 @@ function App() {
   return (
     <div className="App">
       <Router>
-        <Switch>
-          <Route path="/login">
-            <Login />
-          </Route>
-        </Switch>
+        <Route exact path="/login" component={Login} />
+        <ProtectedRoute exact path="/" component={Home} />
       </Router>
     </div>
   );

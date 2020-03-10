@@ -1,28 +1,30 @@
-import React from "react";
-import { useForm } from "react-hook-form";
+import React, { useState } from "react";
 
-export default function LoginForm() {
-  const { register, handleSubmit, errors } = useForm();
-  const onSubmit = data => {};
+export default function LoginForm(props) {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <form>
       <input
-        class="input"
+        className="input"
         name="username"
         placeholder="Username"
-        ref={register({ required: true })}
+        onChange={e => setUsername(e.target.value)}
+        value={username}
+        required
       />
       <input
-        class="input"
+        className="input"
         name="password"
         type="password"
         placeholder="Password"
-        ref={register({ required: true })}
+        onChange={e => setPassword(e.target.value)}
+        value={password}
+        required
       />
-      {errors.exampleRequired && <span>This field is required</span>}
 
-      <button class="button">LOGIN</button>
+      <button className="button">LOGIN</button>
     </form>
   );
 }

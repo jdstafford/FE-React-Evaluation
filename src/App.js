@@ -6,9 +6,10 @@ import "./App.css";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import { fakeInterests, fakeSkills } from "./dummy-data";
 
-import Home from "./components/Home";
-import Login from "./components/Login";
+import HomePage from "./Home/HomePage";
+import LoginPage from "./Login/LoginPage";
 import ProtectedRoute from "./components/ProtectedRoute";
+import PageWrapper from "./components/PageWrapper";
 
 function App() {
   console.log("test return", fakeInterests);
@@ -16,8 +17,10 @@ function App() {
   return (
     <div className="App">
       <Router>
-        <Route exact path="/login" component={Login} />
-        <ProtectedRoute exact path="/" component={Home} />
+        <Route exact path="/login" component={LoginPage} />
+        <ProtectedRoute exact path="/" component={PageWrapper(HomePage)} />
+        <ProtectedRoute exact path="/nav2" component={PageWrapper} />
+        <ProtectedRoute exact path="/nav3" component={PageWrapper} />
       </Router>
     </div>
   );

@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 
 import { userActions } from '../actions';
 
-function LoginForm(props) {
+function LoginForm() {
     const [inputValues, setInputValues] = useState({
         username: '',
         password: ''

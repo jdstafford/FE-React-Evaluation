@@ -7,7 +7,7 @@ import './App.css';
 
 import { Redirect, Route, Router, Switch } from 'react-router-dom';
 
-import { ProtectedRoute } from './components';
+import { PageWrapper, ProtectedRoute } from './components';
 import { HomePage } from './Home';
 import { LoginPage } from './Login';
 
@@ -16,9 +16,33 @@ function App() {
         <div className="App">
             <Router history={history}>
                 <Switch>
-                    <ProtectedRoute exact path="/" component={HomePage} />
-                    <ProtectedRoute exact path="/nav2" component={HomePage} />
-                    <ProtectedRoute exact path="/nav3" component={HomePage} />
+                    <ProtectedRoute
+                        exact
+                        path="/"
+                        component={() => (
+                            <PageWrapper>
+                                <HomePage />
+                            </PageWrapper>
+                        )}
+                    />
+                    <ProtectedRoute
+                        exact
+                        path="/nav2"
+                        component={() => (
+                            <PageWrapper>
+                                <HomePage />
+                            </PageWrapper>
+                        )}
+                    />
+                    <ProtectedRoute
+                        exact
+                        path="/nav3"
+                        component={() => (
+                            <PageWrapper>
+                                <HomePage />
+                            </PageWrapper>
+                        )}
+                    />
                     <Route path="/login" component={LoginPage} />
                     <Redirect from="*" to="/" />
                 </Switch>

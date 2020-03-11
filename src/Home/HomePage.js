@@ -4,9 +4,9 @@ import { useSelector } from 'react-redux';
 function HomePage() {
     const user = useSelector(state => state.user);
     return (
-        <div className="HomePage">
+        <React.Fragment>
             <h1>Hello, {user.username}!</h1>
-        </div>
+        </React.Fragment>
     );
 }
 

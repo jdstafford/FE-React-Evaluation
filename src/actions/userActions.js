@@ -10,7 +10,7 @@ export const userActions = {
 
 function login(username, password) {
     return async dispatch => {
-        dispatch({ type: userConstants.LOGIN_ATTEMPT, username });
+        dispatch({ type: userConstants.LOGIN_REQUEST, username });
 
         try {
             const user = await userService.login(username, password);
@@ -27,7 +27,7 @@ function logout() {
 }
 
 function getInterests(userId) {
-    dispatch({ type: userConstants.GETINTERESTS_ATTEMPT, userId });
+    dispatch({ type: userConstants.GETINTERESTS_REQUEST, userId });
 }
 
 function getSkills() {}

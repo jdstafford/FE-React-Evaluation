@@ -6,7 +6,7 @@ const initialUserState = user ? extend({}, user) : {};
 
 export default function user(state = initialUserState, action) {
     switch (action.type) {
-        case userConstants.LOGIN_ATTEMPT:
+        case userConstants.LOGIN_REQUEST:
             return {
                 user: action.user
             };

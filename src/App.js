@@ -5,7 +5,7 @@ import { history } from './helpers';
 import 'bulma/css/bulma.css';
 import './App.css';
 
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch /*, useSelector*/ } from 'react-redux';
 import { Redirect, Route, Router, Switch } from 'react-router-dom';
 
 import { alertActions } from './actions';
@@ -14,14 +14,14 @@ import { HomePage } from './Home';
 import { LoginPage } from './Login';
 
 function App() {
-    const alert = useSelector(state => state.alert);
-    const dispatch = useDispatch();
+    // const alert = useSelector(state => state.alert);
+    // const dispatch = useDispatch();
 
-    useEffect(() => {
-        history.listen((location, action) => {
-            dispatch(alertActions.clear());
-        });
-    }, []);
+    // useEffect(() => {
+    //     history.listen((location, action) => {
+    //         dispatch(alertActions.clear());
+    //     });
+    // }, []);
 
     return (
         <div className="App">

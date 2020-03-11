@@ -15,7 +15,7 @@ function login(username, password) {
 
         try {
             const user = await userService.login(username, password);
-            dispatch({ type: userConstants.LOGIN_SUCCESS, user });
+            await dispatch({ type: userConstants.LOGIN_SUCCESS, user });
             history.push('/');
         } catch (e) {
             dispatch({ type: userConstants.LOGIN_FAILURE, e });

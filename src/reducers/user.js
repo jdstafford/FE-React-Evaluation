@@ -5,13 +5,9 @@ let authUser = JSON.parse(localStorage.getItem('user'));
 export default function user(state = initialUserState, action) {
     switch (action.type) {
         case userConstants.LOGIN_REQUEST:
-            return {
-                user: { username: action.username }
-            };
+            return { username: action.username };
         case userConstants.LOGIN_SUCCESS:
-            return {
-                user: action.user.data
-            };
+            return action.user.data;
         case userConstants.LOGIN_FAILURE:
             return {};
         case userConstants.LOGOUT:

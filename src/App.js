@@ -1,29 +1,41 @@
-import React from "react";
+import React /*, { useEffect }*/ from 'react';
 
-import "bulma/css/bulma.css";
-import "./App.css";
+import { history } from './helpers';
 
-import { BrowserRouter as Router, Route } from "react-router-dom";
-import { fakeInterests, fakeSkills } from "./dummy-data";
+import 'bulma/css/bulma.css';
+import './App.css';
 
-import HomePage from "./Home/HomePage";
-import LoginPage from "./Login/LoginPage";
-import ProtectedRoute from "./components/ProtectedRoute";
-import PageWrapper from "./components/PageWrapper";
+// import { useDispatch, useSelector } from 'react-redux';
+import { Redirect, Route, Router, Switch } from 'react-router-dom';
+
+// import { alertActions } from './actions';
+import { ProtectedRoute } from './components';
+import { HomePage } from './Home';
+import { LoginPage } from './Login';
 
 function App() {
-  console.log("test return", fakeInterests);
-  console.log("test return", fakeSkills);
-  return (
-    <div className="App">
-      <Router>
-        <Route exact path="/login" component={LoginPage} />
-        <ProtectedRoute exact path="/" component={PageWrapper(HomePage)} />
-        <ProtectedRoute exact path="/nav2" component={PageWrapper} />
-        <ProtectedRoute exact path="/nav3" component={PageWrapper} />
-      </Router>
-    </div>
-  );
+    // const alert = useSelector(state => state.alert);
+    // const dispatch = useDispatch();
+
+    // useEffect(() => {
+    //     history.listen((location, action) => {
+    //         dispatch(alertActions.clear());
+    //     });
+    // }, []);
+
+    return (
+        <div className="App">
+            <Router history={history}>
+                <Switch>
+                    <ProtectedRoute exact path="/" component={HomePage} />
+                    <ProtectedRoute exact path="/nav2" component={HomePage} />
+                    <ProtectedRoute exact path="/nav3" component={HomePage} />
+                    <Route path="/login" component={LoginPage} />
+                    <Redirect from="*" to="/" />
+                </Switch>
+            </Router>
+        </div>
+    );
 }
 
 export default App;

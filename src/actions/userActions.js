@@ -1,3 +1,4 @@
+import { history } from '../helpers';
 import { userConstants } from '../constants';
 import { userService } from '../services';
 
@@ -15,6 +16,7 @@ function login(username, password) {
         try {
             const user = await userService.login(username, password);
             dispatch({ type: userConstants.LOGIN_SUCCESS, user });
+            history.push('/');
         } catch (e) {
             dispatch({ type: userConstants.LOGIN_FAILURE, e });
         }
@@ -27,7 +29,9 @@ function logout() {
 }
 
 function getInterests(userId) {
-    dispatch({ type: userConstants.GETINTERESTS_REQUEST, userId });
+    return async dispatch => {
+        dispatch({ type: userConstants.GETINTERESTS_REQUEST, userId });
+    };
 }
 
 function getSkills() {}

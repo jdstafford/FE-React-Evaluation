@@ -1,30 +1,52 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
 
-export default function LoginForm(props) {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
+import { userActions } from '../actions';
 
-  return (
-    <form>
-      <input
-        className="input"
-        name="username"
-        placeholder="Username"
-        onChange={e => setUsername(e.target.value)}
-        value={username}
-        required
-      />
-      <input
-        className="input"
-        name="password"
-        type="password"
-        placeholder="Password"
-        onChange={e => setPassword(e.target.value)}
-        value={password}
-        required
-      />
+function LoginForm(props) {
+    const [inputValues, setInputValues] = useState({
+        username: '',
+        password: ''
+    });
+    const { username, password } = inputValues;
+    const dispatch = useDispatch();
 
-      <button className="button">LOGIN</button>
-    </form>
-  );
+    function handleChange(e) {
+        const { name, value } = e.target;
+        setInputValues(inputValues => ({ ...inputValues, [name]: value }));
+    }
+
+    function handleSubmit(e) {
+        e.preventDefault();
+
+        if (username && password) {
+            dispatch(userActions.login(username, password));
+        }
+    }
+
+    return (
+        <form name="loginForm" onSubmit={handleSubmit}>
+            <input
+                className="input"
+                name="username"
+                placeholder="Username"
+                onChange={handleChange}
+                value={username}
+                required
+            />
+            <input
+                className="input"
+                name="password"
+                type="password"
+                placeholder="Password"
+                onChange={handleChange}
+                value={password}
+                required
+            />
+
+            <button className="button">LOGIN</button>
+        </form>
+    );
 }
+
+export { LoginForm };

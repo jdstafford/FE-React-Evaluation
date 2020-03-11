@@ -1,8 +1,7 @@
-import { extend } from 'lodash';
 import { userConstants } from '../constants';
 
 let user = JSON.parse(localStorage.getItem('user'));
-const initialUserState = user ? extend({}, user) : {};
+const initialUserState = user ? user : {};
 
 export default function user(state = initialUserState, action) {
     switch (action.type) {

@@ -1,0 +1,9 @@
+.Nav {
+    height: 75px;
+    background-color: #343d44;
+}
+
+.Nav .logo {
+    height: 75px;
+    width: 200px;
+}

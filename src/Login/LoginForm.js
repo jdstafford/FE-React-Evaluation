@@ -4,12 +4,12 @@ import { useDispatch } from 'react-redux';
 import { userActions } from '../actions';
 
 function LoginForm() {
+    const dispatch = useDispatch();
     const [inputValues, setInputValues] = useState({
         username: '',
         password: ''
     });
     const { username, password } = inputValues;
-    const dispatch = useDispatch();
 
     function handleChange(e) {
         const { name, value } = e.target;

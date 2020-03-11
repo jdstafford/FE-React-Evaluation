@@ -15,7 +15,7 @@ function login(username, password) {
 
         try {
             const user = await userService.login(username, password);
-            await dispatch({ type: userConstants.LOGIN_SUCCESS, user });
+            dispatch({ type: userConstants.LOGIN_SUCCESS, user });
             history.push('/');
         } catch (e) {
             dispatch({ type: userConstants.LOGIN_FAILURE, e });
@@ -34,4 +34,8 @@ function getInterests(userId) {
     };
 }
 
-function getSkills() {}
+function getSkills(userId) {
+    return async dispatch => {
+        dispatch({ type: userConstants.GETSKILLS_REQUEST, userId });
+    };
+}

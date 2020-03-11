@@ -9,7 +9,7 @@ export const userActions = {
 };
 
 function login(username, password) {
-    return dispatch => {
+    return async dispatch => {
         dispatch({ type: userConstants.LOGIN_ATTEMPT, username });
 
         try {
@@ -30,6 +30,4 @@ function getInterests(userId) {
     dispatch({ type: userConstants.GETINTERESTS_ATTEMPT, userId });
 }
 
-function getSkills() {
-
-}
+function getSkills() {}

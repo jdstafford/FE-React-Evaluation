@@ -12,7 +12,6 @@ export default function user(state = initialUserState, action) {
             };
         case userConstants.LOGIN_SUCCESS:
             return {
-                loggedIn: true,
                 user: action.user
             };
         case userConstants.LOGIN_FAILURE:

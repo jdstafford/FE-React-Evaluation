@@ -2,7 +2,7 @@ import axios from 'axios';
 import MockAdapter from 'axios-mock-adapter';
 import { fakeInterests, fakeSkills } from '../dummy-data';
 
-var mock = new MockAdapter(axios, { delayResponse: 2000 });
+var mock = new MockAdapter(axios, { delayResponse: 250 });
 
 mock.onPost('/users/authenticate').reply(200, {
     id: 12345,

@@ -1,28 +1,17 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 
 import { history } from './helpers';
 
 import 'bulma/css/bulma.css';
 import './App.css';
 
-import { useDispatch /*, useSelector*/ } from 'react-redux';
 import { Redirect, Route, Router, Switch } from 'react-router-dom';
 
-import { alertActions } from './actions';
 import { ProtectedRoute } from './components';
 import { HomePage } from './Home';
 import { LoginPage } from './Login';
 
 function App() {
-    // const alert = useSelector(state => state.alert);
-    // const dispatch = useDispatch();
-
-    // useEffect(() => {
-    //     history.listen((location, action) => {
-    //         dispatch(alertActions.clear());
-    //     });
-    // }, []);
-
     return (
         <div className="App">
             <Router history={history}>

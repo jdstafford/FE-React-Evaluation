@@ -31,11 +31,23 @@ function logout() {
 function getInterests(userId) {
     return async dispatch => {
         dispatch({ type: userConstants.GETINTERESTS_REQUEST, userId });
+        try {
+            const interests = await userService.getInterests(userId);
+            dispatch({ type: userConstants.GETINTERESTS_SUCCESS, interests });
+        } catch (e) {
+            dispatch({ type: userConstants.GETINTERESTS_FAILURE, e });
+        }
     };
 }
 
 function getSkills(userId) {
     return async dispatch => {
         dispatch({ type: userConstants.GETSKILLS_REQUEST, userId });
+        try {
+            const skills = await userService.getSkills(userId);
+            dispatch({ type: userConstants.GETSKILLS_SUCCESS, skills });
+        } catch (e) {
+            dispatch({ type: userConstants.GETSKILLS_FAILURE, e });
+        }
     };
 }

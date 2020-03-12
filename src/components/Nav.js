@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 import ProfileMenu from './ProfileMenu';
 
@@ -13,13 +13,13 @@ const Nav = () => {
             </div>
             <div className="navbar-end">
                 <p className="navbar-item">
-                    <Link to="/">Home</Link>
+                    <NavLink to="/">Home</NavLink>
                 </p>
                 <p className="navbar-item">
-                    <Link to="/nav2">Navigation 2</Link>
+                    <NavLink to="/nav2">Navigation 2</NavLink>
                 </p>
                 <p className="navbar-item">
-                    <Link to="/nav3">Navigation 3</Link>
+                    <NavLink to="/nav3">Navigation 3</NavLink>
                 </p>
                 <ProfileMenu />
             </div>

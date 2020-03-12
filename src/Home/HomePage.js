@@ -22,7 +22,10 @@ function HomePage() {
             {interests ? (
                 <>
                     {interests.map(interest => (
-                        <div className="box tile">
+                        <div
+                            className="box tile"
+                            key={`interest_${interest.id}`}
+                        >
                             Interest {interest.id}
                             <br />
                             Name: {interest.name}
@@ -39,7 +42,7 @@ function HomePage() {
             {skills ? (
                 <>
                     {skills.map(skill => (
-                        <div className="box tile">
+                        <div className="box tile" key={`skill_${skill.id}`}>
                             Skill {skill.id}
                             <br />
                             Name: {skill.name}

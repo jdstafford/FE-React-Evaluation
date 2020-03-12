@@ -28,6 +28,12 @@ async function login(username, password) {
         password
     });
 
+    console.info(
+        `POST '/users/authenticate', ${JSON.stringify({
+            username,
+            password
+        })}: ${JSON.stringify(user)}`
+    );
     localStorage.setItem('user', JSON.stringify(user.data));
 
     return user;
@@ -38,9 +44,15 @@ function logout() {
 }
 
 async function getInterests(userId) {
-    return await axios.get(`/users/${userId}/interests`);
+    const interests = await axios.get(`/users/${userId}/interests`);
+    console.info(
+        `GET '/users/${userId}/interests': ${JSON.stringify(interests)}`
+    );
+    return interests;
 }
 
 async function getSkills(userId) {
-    return await axios.get(`/users/${userId}/skills`);
+    const skills = await axios.get(`/users/${userId}/skills`);
+    console.info(`GET '/users/${userId}/skills': ${JSON.stringify(skills)}`);
+    return skills;
 }

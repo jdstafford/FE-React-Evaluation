@@ -38,6 +38,7 @@ async function login(username, password) {
             password
         })}: ${JSON.stringify(user)}`
     );
+
     localStorage.setItem('user', JSON.stringify(user.data));
 
     return user;

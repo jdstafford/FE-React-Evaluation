@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { userActions } from '../actions';
 
+import { ItemCardContainer } from '../components';
+
 function HomePage() {
     const dispatch = useDispatch();
     const user = useSelector(state => state.user);
@@ -29,52 +31,10 @@ function HomePage() {
             </p>
 
             <h2>Interests</h2>
-            <div className="columns is-multiline">
-                {interests ? (
-                    <>
-                        {interests.map(interest => (
-                            <div
-                                className="column is-one-fifth"
-                                key={`interest_${interest.id}`}
-                            >
-                                <div className="box">
-                                    Interest {interest.id}
-                                    <br />
-                                    Name: {interest.name}
-                                    <br />
-                                    Type: {interest.type}
-                                </div>
-                            </div>
-                        ))}
-                    </>
-                ) : (
-                    <></>
-                )}
-            </div>
+            <ItemCardContainer items={interests} itemsType="Interest" />
 
             <h2>Skills</h2>
-            <div className="columns is-multiline">
-                {skills ? (
-                    <>
-                        {skills.map(skill => (
-                            <div
-                                className="column is-one-fifth"
-                                key={`skill_${skill.id}`}
-                            >
-                                <div className="box">
-                                    Skill {skill.id}
-                                    <br />
-                                    Name: {skill.name}
-                                    <br />
-                                    Type: {skill.type}
-                                </div>
-                            </div>
-                        ))}
-                    </>
-                ) : (
-                    <></>
-                )}
-            </div>
+            <ItemCardContainer items={skills} itemsType="Skill" />
         </div>
     );
 }

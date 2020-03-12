@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { userActions } from '../actions';
 
+import { ItemCardContainer } from '../components';
+
 function SkillsPage() {
     const dispatch = useDispatch();
     const user = useSelector(state => state.user);
@@ -15,25 +17,7 @@ function SkillsPage() {
     return (
         <div className="SkillsPage container">
             <h1>Skills</h1>
-            <div className="columns is-flex is-mobile">
-                {skills ? (
-                    <>
-                        {skills.map(skill => (
-                            <div className="column" key={`skill_${skill.id}`}>
-                                <div className="box">
-                                    Skill {skill.id}
-                                    <br />
-                                    Name: {skill.name}
-                                    <br />
-                                    Type: {skill.type}
-                                </div>
-                            </div>
-                        ))}
-                    </>
-                ) : (
-                    <></>
-                )}
-            </div>
+            <ItemCardContainer items={skills} itemsType="Skill" />
         </div>
     );
 }

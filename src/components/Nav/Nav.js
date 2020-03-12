@@ -6,7 +6,7 @@ import ProfileMenu from './ProfileMenu/ProfileMenu';
 
 import './Nav.css';
 
-const Nav = () => {
+export const Nav = () => {
     const user = useSelector(state => state.user);
     return (
         <div className="Nav navbar-brand">
@@ -32,5 +32,3 @@ const Nav = () => {
         </div>
     );
 };
-
-export default Nav;

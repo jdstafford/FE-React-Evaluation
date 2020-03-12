@@ -8,10 +8,10 @@ import './App.css';
 import { Redirect, Route, Router, Switch } from 'react-router-dom';
 
 import { PageWrapper, ProtectedRoute } from './components';
-import { HomePage } from './Home';
-import { InterestsPage } from './Interests';
-import { LoginPage } from './Login';
-import { SkillsPage } from './Skills';
+import { HomePage } from './pages/Home';
+import { InterestsPage } from './pages/Interests';
+import { LoginPage } from './pages/Login';
+import { SkillsPage } from './pages/Skills';
 
 function App() {
     return (

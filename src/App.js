@@ -9,6 +9,7 @@ import { Redirect, Route, Router, Switch } from 'react-router-dom';
 
 import { PageWrapper, ProtectedRoute } from './components';
 import { HomePage } from './Home';
+import { InterestsPage } from './Interests';
 import { LoginPage } from './Login';
 
 function App() {
@@ -18,7 +19,7 @@ function App() {
                 <Switch>
                     <ProtectedRoute
                         exact
-                        path="/"
+                        path="/home"
                         component={() => (
                             <PageWrapper>
                                 <HomePage />
@@ -27,10 +28,10 @@ function App() {
                     />
                     <ProtectedRoute
                         exact
-                        path="/nav2"
+                        path="/interests"
                         component={() => (
                             <PageWrapper>
-                                <HomePage />
+                                <InterestsPage />
                             </PageWrapper>
                         )}
                     />
@@ -44,7 +45,7 @@ function App() {
                         )}
                     />
                     <Route path="/login" component={LoginPage} />
-                    <Redirect from="*" to="/" />
+                    <Redirect from="*" to="/home" />
                 </Switch>
             </Router>
         </div>

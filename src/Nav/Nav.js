@@ -17,10 +17,10 @@ const Nav = () => {
             </div>
             <div className="navbar-end">
                 <div className="navbar-item">
-                    <NavLink to="/">Home</NavLink>
+                    <NavLink to="/home">Home</NavLink>
                 </div>
                 <div className="navbar-item">
-                    <NavLink to="/nav2">Navigation 2</NavLink>
+                    <NavLink to="/interests">Interests</NavLink>
                 </div>
                 <div className="navbar-item">
                     <NavLink to="/nav3">Navigation 3</NavLink>

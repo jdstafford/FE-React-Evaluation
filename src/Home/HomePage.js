@@ -20,10 +20,10 @@ function HomePage() {
 
             <h2>Interests</h2>
             {interests ? (
-                <>
+                <div className="tile is-parent">
                     {interests.map(interest => (
                         <div
-                            className="box tile"
+                            className="box tile is-child"
                             key={`interest_${interest.id}`}
                         >
                             Interest {interest.id}
@@ -33,16 +33,19 @@ function HomePage() {
                             Type: {interest.type}
                         </div>
                     ))}
-                </>
+                </div>
             ) : (
                 <></>
             )}
 
             <h2>Skills</h2>
             {skills ? (
-                <>
+                <div className="tile is-parent">
                     {skills.map(skill => (
-                        <div className="box tile" key={`skill_${skill.id}`}>
+                        <div
+                            className="box tile is-child"
+                            key={`skill_${skill.id}`}
+                        >
                             Skill {skill.id}
                             <br />
                             Name: {skill.name}
@@ -50,7 +53,7 @@ function HomePage() {
                             Type: {skill.type}
                         </div>
                     ))}
-                </>
+                </div>
             ) : (
                 <></>
             )}

@@ -1,6 +1,12 @@
 .Nav {
     height: 75px;
     background-color: #343d44;
+    color: white;
+    font-size: 10pt;
+}
+
+.Nav a {
+    color: white;
 }
 
 .Nav .logo {

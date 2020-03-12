@@ -1,15 +1,38 @@
 .Nav {
     height: 75px;
     background-color: #343d44;
-    color: white;
+    color: #d7d7d7;
     font-size: 10pt;
 }
 
 .Nav a {
-    color: white;
+    padding: 3px 0;
+    margin: 0 12px;
+    color: #d7d7d7;
 }
 
-.Nav .logo {
-    height: 75px;
+.Nav a.active {
+    border-bottom: 4px solid orange;
+}
+
+.Nav a:hover {
+    color: orange;
+}
+
+.Nav .logo-container {
+    width: 136px;
+    height: 45px;
+    padding: none;
+    margin: none;
+}
+
+.Nav .logo-wrapper {
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
     width: 200px;
+    height: 74px;
+    padding: none;
+    margin: none;
+    background-color: rgba(92, 111, 125, 1);
 }

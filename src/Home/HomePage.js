@@ -29,12 +29,12 @@ function HomePage() {
             </p>
 
             <h2>Interests</h2>
-            <div className="columns is-flex is-mobile">
+            <div className="columns is-multiline">
                 {interests ? (
                     <>
                         {interests.map(interest => (
                             <div
-                                className="column"
+                                className="column is-one-fifth"
                                 key={`interest_${interest.id}`}
                             >
                                 <div className="box">
@@ -53,11 +53,14 @@ function HomePage() {
             </div>
 
             <h2>Skills</h2>
-            <div className="columns is-flex is-mobile">
+            <div className="columns is-multiline">
                 {skills ? (
                     <>
                         {skills.map(skill => (
-                            <div className="column" key={`skill_${skill.id}`}>
+                            <div
+                                className="column is-one-fifth"
+                                key={`skill_${skill.id}`}
+                            >
                                 <div className="box">
                                     Skill {skill.id}
                                     <br />

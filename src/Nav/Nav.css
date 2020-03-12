@@ -12,11 +12,11 @@
 }
 
 .Nav a.active {
-    border-bottom: 4px solid orange;
+    border-bottom: 4px solid rgb(237, 134, 67);
 }
 
 .Nav a:hover {
-    color: orange;
+    color: rgb(237, 134, 67);
 }
 
 .Nav .logo-container {

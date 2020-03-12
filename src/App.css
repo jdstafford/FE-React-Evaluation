@@ -7,3 +7,11 @@ h2 {
     font-size: 24px;
     margin: 24px 0px;
 }
+
+.center-all {
+    padding: 0;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+}

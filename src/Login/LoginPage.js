@@ -2,13 +2,17 @@ import React from 'react';
 
 import { LoginForm } from './';
 
+import './LoginPage.css';
+
 function LoginPage() {
     return (
-        <div className="Login container columns is-vcentered">
-            <div className="column">LOGO GOES HERE</div>
-            <div className="column">
-                <p>Login to Our Magic Portal</p>
-                <LoginForm />
+        <div className="Login center-all container">
+            <div className="LoginModal columns box">
+                <div className="Logo is-half column">LOGO GOES HERE</div>
+                <div className="Form is-half column">
+                    <p>Login to Our Magic Portal</p>
+                    <LoginForm />
+                </div>
             </div>
         </div>
     );

@@ -19,44 +19,49 @@ function HomePage() {
             <h1>Welcome {user.name}</h1>
 
             <h2>Interests</h2>
-            {interests ? (
-                <div className="tile is-parent">
-                    {interests.map(interest => (
-                        <div
-                            className="box tile is-child"
-                            key={`interest_${interest.id}`}
-                        >
-                            Interest {interest.id}
-                            <br />
-                            Name: {interest.name}
-                            <br />
-                            Type: {interest.type}
-                        </div>
-                    ))}
-                </div>
-            ) : (
-                <></>
-            )}
+            <div className="columns is-flex is-mobile">
+                {interests ? (
+                    <>
+                        {interests.map(interest => (
+                            <div
+                                className="column"
+                                key={`interest_${interest.id}`}
+                            >
+                                <div className="box">
+                                    Interest {interest.id}
+                                    <br />
+                                    Name: {interest.name}
+                                    <br />
+                                    Type: {interest.type}
+                                </div>
+                            </div>
+                        ))}
+                    </>
+                ) : (
+                    <></>
+                )}
+            </div>
 
             <h2>Skills</h2>
-            {skills ? (
-                <div className="tile is-parent">
-                    {skills.map(skill => (
-                        <div
-                            className="box tile is-child"
-                            key={`skill_${skill.id}`}
-                        >
-                            Skill {skill.id}
-                            <br />
-                            Name: {skill.name}
-                            <br />
-                            Type: {skill.type}
-                        </div>
-                    ))}
-                </div>
-            ) : (
-                <></>
-            )}
+            <div className="columns is-flex is-mobile">
+                {skills ? (
+                    <>
+                        {skills.map(skill => (
+                            <div className="column" key={`skill_${skill.id}`}>
+                                <div className="box">
+                                    Skill {skill.id}
+                                    <br />
+                                    Name: {skill.name}
+                                    <br />
+                                    Type: {skill.type}
+                                </div>
+                            </div>
+                        ))}
+                    </>
+                ) : (
+                    <></>
+                )}
+            </div>
         </div>
     );
 }

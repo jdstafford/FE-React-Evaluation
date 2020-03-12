@@ -23,7 +23,7 @@ const Nav = () => {
                     <NavLink to="/interests">Interests</NavLink>
                 </div>
                 <div className="navbar-item">
-                    <NavLink to="/nav3">Navigation 3</NavLink>
+                    <NavLink to="/skills">Skills</NavLink>
                 </div>
                 <div className="navbar-item">
                     <ProfileMenu username={user.username} />

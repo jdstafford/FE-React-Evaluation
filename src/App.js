@@ -11,6 +11,7 @@ import { PageWrapper, ProtectedRoute } from './components';
 import { HomePage } from './Home';
 import { InterestsPage } from './Interests';
 import { LoginPage } from './Login';
+import { SkillsPage } from './Skills';
 
 function App() {
     return (
@@ -37,10 +38,10 @@ function App() {
                     />
                     <ProtectedRoute
                         exact
-                        path="/nav3"
+                        path="/skills"
                         component={() => (
                             <PageWrapper>
-                                <HomePage />
+                                <SkillsPage />
                             </PageWrapper>
                         )}
                     />

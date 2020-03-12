@@ -2,12 +2,11 @@ import axios from 'axios';
 import MockAdapter from 'axios-mock-adapter';
 import { fakeInterests, fakeSkills } from '../dummy-data';
 
-var mock = new MockAdapter(axios, { delayResponse: 250 });
+const mock = new MockAdapter(axios, { delayResponse: 250 });
 
 mock.onPost('/users/authenticate').reply(200, {
     id: 12345,
-    name: 'Lucy Parsons',
-    username: 'lucy@parsons.com',
+    name: 'Tom Hanks',
     token: 'this-is-where-a-token-would-go'
 });
 
@@ -27,6 +26,11 @@ async function login(username, password) {
         username,
         password
     });
+
+    // this is a little janky.  We want to use the username from form input,
+    // but I also thought it would be nice to have a true "user" object.
+    // I'm decorating the hard-coded user with the username from input
+    user.data.username = username;
 
     console.info(
         `POST '/users/authenticate', ${JSON.stringify({

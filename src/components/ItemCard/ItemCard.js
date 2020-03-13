@@ -7,7 +7,7 @@ import './ItemCard.css';
 
 const ItemCard = props => {
     const handleClick = itemId => {
-        history.push(`/home/${pluralize(props.category)}/${itemId}`);
+        history.push(`/${pluralize(props.category)}/${itemId}`);
     };
 
     return props.item ? (

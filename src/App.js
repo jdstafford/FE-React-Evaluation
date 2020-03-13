@@ -29,14 +29,6 @@ function App() {
                         )}
                     />
                     <ProtectedRoute
-                        path="/home/:category/:id"
-                        component={() => (
-                            <PageWrapper>
-                                <DetailsPage />
-                            </PageWrapper>
-                        )}
-                    />
-                    <ProtectedRoute
                         exact
                         path="/interests"
                         component={() => (
@@ -51,6 +43,15 @@ function App() {
                         component={() => (
                             <PageWrapper>
                                 <SkillsPage />
+                            </PageWrapper>
+                        )}
+                    />
+                    <ProtectedRoute
+                        exact
+                        path="/:category/:id"
+                        component={() => (
+                            <PageWrapper>
+                                <DetailsPage />
                             </PageWrapper>
                         )}
                     />

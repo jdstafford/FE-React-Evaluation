@@ -14,7 +14,7 @@
 
 .LoginModal input {
     border-radius: 0;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 .LoginModal input:active,
@@ -27,7 +27,9 @@
 }
 
 .LoginModal .Form {
-    color: #d7d7d7;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
     flex-direction: column;
     background-color: rgba(66, 80, 91, 1);
 }
@@ -42,6 +44,10 @@
     background-color: rgb(237, 134, 67);
     border: none;
     width: 100%;
+}
+
+.LoginModal .Form button:hover {
+    background-color: rgba(92, 111, 125, 1);
 }
 
 .LoginModal .Logo img {

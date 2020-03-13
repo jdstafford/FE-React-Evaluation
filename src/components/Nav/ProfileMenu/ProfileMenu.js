@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 
 import { userActions } from '../../../actions';
@@ -11,19 +11,26 @@ import './ProfileMenu.css';
 const ProfileMenu = props => {
     const dispatch = useDispatch();
 
+    const [menuActive, setMenuActive] = useState(false);
+
     function handleLogout(e) {
         e.preventDefault();
         dispatch(userActions.logout());
     }
 
+    function toggleMenu() {
+        setMenuActive(!menuActive);
+    }
+
     return (
         <div className="ProfileMenu">
-            <div className="dropdown">
+            <div className={`dropdown ${menuActive ? 'is-active' : ''}`}>
                 <div className="dropdown-trigger">
                     <button
                         className="button"
                         aria-haspopup="true"
                         aria-controls="dropdown-menu"
+                        onClick={toggleMenu}
                     >
                         <span>
                             <FontAwesomeIcon icon={faUser} />

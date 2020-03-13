@@ -1,5 +1,7 @@
 .Login {
     height: 100vh;
+    width: 100vw;
+    background-color: rgba(244, 249, 253, 1);
 }
 
 .LoginModal {
@@ -31,4 +33,12 @@
     width: 90%;
     background-color: rgb(237, 134, 67);
     border: none;
+}
+
+.LoginModal .Form input {
+    margin: 5px 0;
+}
+
+.LoginModal .Logo img {
+    width: 200px;
 }

@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { userActions } from '../../actions';
 
-import { ItemCardContainer } from '../../components';
+import { ItemCardContainer } from '../../components/ItemCard';
 
 function SkillsPage() {
     const dispatch = useDispatch();
@@ -16,8 +16,7 @@ function SkillsPage() {
 
     return (
         <div className="SkillsPage container">
-            <h1>Skills</h1>
-            <ItemCardContainer items={skills} itemsType="Skill" />
+            <ItemCardContainer items={skills} category="skill" />
         </div>
     );
 }

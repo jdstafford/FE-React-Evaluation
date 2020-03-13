@@ -9,7 +9,7 @@ import './Nav.css';
 export const Nav = () => {
     const user = useSelector(state => state.user);
     return (
-        <div className="Nav navbar-brand">
+        <div className="Nav navbar-brand is-mobile">
             <div className="navbar-start logo-wrapper">
                 <div className="logo-container">
                     <img src="/u7.png" className="logo" alt="No.Inc logo" />

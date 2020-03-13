@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { userActions } from '../../actions';
 
-import { ItemCardContainer } from '../../components';
+import { ItemCardContainer } from '../../components/ItemCard';
 
 function HomePage() {
     const dispatch = useDispatch();
@@ -30,11 +30,9 @@ function HomePage() {
                 sapien nunc accuan eget.
             </p>
 
-            <h2>Interests</h2>
-            <ItemCardContainer items={interests} itemsType="Interest" />
+            <ItemCardContainer items={interests} category="interest" />
 
-            <h2>Skills</h2>
-            <ItemCardContainer items={skills} itemsType="Skill" />
+            <ItemCardContainer items={skills} category="skill" />
         </div>
     );
 }

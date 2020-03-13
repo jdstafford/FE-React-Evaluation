@@ -8,6 +8,7 @@ import './App.css';
 import { Redirect, Route, Router, Switch } from 'react-router-dom';
 
 import { PageWrapper, ProtectedRoute } from './components';
+import { DetailsPage } from './pages/Details';
 import { HomePage } from './pages/Home';
 import { InterestsPage } from './pages/Interests';
 import { LoginPage } from './pages/Login';
@@ -24,6 +25,14 @@ function App() {
                         component={() => (
                             <PageWrapper>
                                 <HomePage />
+                            </PageWrapper>
+                        )}
+                    />
+                    <ProtectedRoute
+                        path="/home/:category/:id"
+                        component={() => (
+                            <PageWrapper>
+                                <DetailsPage />
                             </PageWrapper>
                         )}
                     />

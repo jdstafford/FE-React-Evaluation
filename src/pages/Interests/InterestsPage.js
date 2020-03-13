@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { userActions } from '../../actions';
 
-import { ItemCardContainer } from '../../components';
+import { ItemCardContainer } from '../../components/ItemCard';
 
 function InterestsPage() {
     const dispatch = useDispatch();
@@ -16,8 +16,7 @@ function InterestsPage() {
 
     return (
         <div className="InterestsPage container">
-            <h1>Interests</h1>
-            <ItemCardContainer items={interests} itemsType="Interest" />
+            <ItemCardContainer items={interests} category="interest" />
         </div>
     );
 }

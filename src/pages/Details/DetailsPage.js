@@ -1,15 +1,34 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 
-import { capitalize } from '../../helpers';
+import * as pluralize from 'pluralize';
+// import { capitalize } from '../../helpers';
+
+import { interestActions, skillActions } from '../../actions';
 
 function DetailsPage() {
+    const dispatch = useDispatch();
     const { category, id: itemId } = useParams();
+    const actionsLookup = {
+        interests: { actions: interestActions, method: 'getInterestById' },
+        skills: { actions: skillActions, method: 'getSkillById' }
+    };
+    const categoryActions = actionsLookup[category].actions;
+    const categoryMethod = actionsLookup[category].method;
+    const itemDetails = useSelector(
+        state => state[pluralize.singular(category)]
+    );
+
+    useEffect(() => {
+        dispatch(categoryActions[categoryMethod](itemId));
+    });
 
     return (
         <div className="DetailsPage container">
-            <p>Category: {capitalize(category)}</p>
-            <p>Id: {itemId}</p>
+            <h1>{itemDetails.name}</h1>
+            <h2>{itemDetails.type}</h2>
+            <p>{itemDetails.detail}</p>
         </div>
     );
 }

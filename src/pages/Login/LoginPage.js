@@ -2,7 +2,7 @@ import React from 'react';
 
 import { LoginForm } from './';
 
-import './LoginPage.css';
+import './LoginPage.scss';
 
 function LoginPage() {
     return (

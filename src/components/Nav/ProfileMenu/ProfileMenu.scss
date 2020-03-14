@@ -1,0 +1,13 @@
+.ProfileMenu {
+    button {
+        color: white;
+        background-color: transparent;
+        border: none;
+        font-size: 14px;
+        font-weight: bold;
+        &:hover,
+        &:active {
+            color: orange;
+        }
+    }
+}

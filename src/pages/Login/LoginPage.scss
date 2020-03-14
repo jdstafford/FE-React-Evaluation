@@ -1,0 +1,46 @@
+.Login {
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(244, 249, 253, 1);
+    .LoginModal {
+        width: 800px;
+        height: 380px;
+        border: 10px solid white;
+        border-radius: 0;
+        padding: 0;
+        .Logo {
+            background-color: rgba(92, 111, 125, 1);
+            img {
+                width: 200px;
+            }
+        }
+        .Form {
+            font-size: 18px;
+            font-weight: bold;
+            color: white;
+            flex-direction: column;
+            background-color: rgba(66, 80, 91, 1);
+            form {
+                padding: 0 20px;
+                margin-top: 20px;
+                input {
+                    border-radius: 0;
+                    margin-bottom: 20px;
+                    &:active,
+                    &:focus {
+                        border-color: rgb(237, 134, 67);
+                    }
+                }
+                button {
+                    color: white;
+                    background-color: rgb(237, 134, 67);
+                    border: none;
+                    width: 100%;
+                    &:hover {
+                        background-color: rgba(92, 111, 125, 1);
+                    }
+                }
+            }
+        }
+    }
+}

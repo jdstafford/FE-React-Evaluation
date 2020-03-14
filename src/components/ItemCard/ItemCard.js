@@ -3,7 +3,7 @@ import React from 'react';
 import * as pluralize from 'pluralize';
 import { capitalize, history } from '../../helpers';
 
-import './ItemCard.css';
+import './ItemCard.scss';
 
 const ItemCard = props => {
     const handleClick = itemId => {

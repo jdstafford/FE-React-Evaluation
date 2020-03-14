@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 
 import ProfileMenu from './ProfileMenu/ProfileMenu';
 
-import './Nav.css';
+import './Nav.scss';
 
 export const Nav = () => {
     const user = useSelector(state => state.user);

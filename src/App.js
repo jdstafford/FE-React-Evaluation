@@ -3,7 +3,7 @@ import React from 'react';
 import { history } from './helpers';
 
 import 'bulma/css/bulma.css';
-import './App.css';
+import './App.scss';
 
 import { Redirect, Route, Router, Switch } from 'react-router-dom';
 

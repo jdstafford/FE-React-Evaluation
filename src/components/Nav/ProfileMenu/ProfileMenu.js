@@ -6,7 +6,7 @@ import { userActions } from '../../../actions';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleDown, faUser } from '@fortawesome/free-solid-svg-icons';
 
-import './ProfileMenu.css';
+import './ProfileMenu.scss';
 
 const ProfileMenu = props => {
     const dispatch = useDispatch();

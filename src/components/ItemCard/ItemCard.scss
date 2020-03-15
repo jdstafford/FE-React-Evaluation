@@ -1,11 +1,13 @@
+@import '../../variables.scss';
+
 .ItemCard {
     .box {
         border-radius: 0;
         height: 220px;
-        border: 10px solid white;
-        background-color: rgba(244, 249, 253, 1);
+        border: 10px solid $white;
+        background-color: $light-gray;
         &:hover {
-            border-color: rgb(237, 134, 67);
+            border-color: $orange;
         }
     }
 }

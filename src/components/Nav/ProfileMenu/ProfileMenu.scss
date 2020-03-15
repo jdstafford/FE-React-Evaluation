@@ -1,3 +1,5 @@
+@import '../../../variables.scss';
+
 .ProfileMenu {
     button {
         color: white;
@@ -7,7 +9,7 @@
         font-weight: bold;
         &:hover,
         &:active {
-            color: orange;
+            color: $orange;
         }
     }
 }

@@ -3,13 +3,13 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 
 import * as pluralize from 'pluralize';
-// import { capitalize } from '../../helpers';
 
 import { interestActions, skillActions } from '../../actions';
 
 function DetailsPage() {
     const dispatch = useDispatch();
     const { category, id: itemId } = useParams();
+    // @TODO: there has to be a better way than coupling this component
     const actionsLookup = {
         interests: { actions: interestActions, method: 'getInterestById' },
         skills: { actions: skillActions, method: 'getSkillById' }

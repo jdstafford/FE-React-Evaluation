@@ -7,7 +7,7 @@ import './LoginPage.scss';
 function LoginPage() {
     return (
         <div className="Login center-all">
-            <div className="LoginModal columns is-gapless box">
+            <div className="LoginModal columns is-gapless box is-radiusless">
                 <div className="Logo is-half column center-all">
                     <img src="/u7.png" className="logo" alt="No.Inc logo" />
                 </div>

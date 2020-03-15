@@ -29,7 +29,7 @@ function LoginForm() {
     return (
         <form name="loginForm" onSubmit={handleSubmit}>
             <input
-                className="input"
+                className="input is-radiusless"
                 name="username"
                 placeholder="Username"
                 onChange={handleChange}
@@ -37,7 +37,7 @@ function LoginForm() {
                 required
             />
             <input
-                className="input"
+                className="input is-radiusless"
                 name="password"
                 type="password"
                 placeholder="Password"

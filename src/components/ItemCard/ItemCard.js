@@ -13,12 +13,25 @@ const ItemCard = props => {
     return props.item ? (
         <>
             <div className="ItemCard column is-one-third">
-                <div className="box" onClick={() => handleClick(props.item.id)}>
-                    {capitalize(props.category)} {props.item.id}
-                    <br />
-                    Name: {props.item.name}
-                    <br />
-                    Type: {props.item.type}
+                <div
+                    className="box is-radiusless"
+                    onClick={() => handleClick(props.item.id)}
+                >
+                    <h1>
+                        {capitalize(props.category)} {props.item.id}
+                    </h1>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td className="label">Name:</td>
+                                <td>{props.item.name}</td>
+                            </tr>
+                            <tr>
+                                <td className="label">Type:</td>
+                                <td>{props.item.type}</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </>

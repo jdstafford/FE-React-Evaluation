@@ -2,12 +2,31 @@
 
 .ItemCard {
     .box {
-        border-radius: 0;
         height: 220px;
         border: 10px solid $white;
         background-color: $light-gray;
         &:hover {
             border-color: $orange;
         }
+    }
+    table {
+        width: 100%;
+        table-layout: fixed;
+        td {
+            width: 80%;
+            .label {
+                width: 20%;
+                display: inline-block;
+                font-weight: bold;
+            }
+        }
+    }
+    h1 {
+        color: $orange;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 700;
+        margin-top: 0px;
+        margin-bottom: 15px;
     }
 }

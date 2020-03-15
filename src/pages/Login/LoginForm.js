@@ -9,6 +9,7 @@ function LoginForm() {
         username: '',
         password: ''
     });
+    const [isLoading, setIsLoading] = useState({ isLoading: '' });
     const { username, password } = inputValues;
 
     function handleChange(e) {
@@ -20,6 +21,7 @@ function LoginForm() {
         e.preventDefault();
 
         if (username && password) {
+            setIsLoading('is-loading');
             dispatch(userActions.login(username, password));
         }
     }
@@ -44,7 +46,7 @@ function LoginForm() {
                 required
             />
 
-            <button className="button">LOGIN</button>
+            <button className={`button ${isLoading}`}>LOGIN</button>
         </form>
     );
 }

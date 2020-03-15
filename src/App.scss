@@ -15,6 +15,23 @@ h2 {
     margin: 24px 0px;
 }
 
+span.item-type {
+    color: $white;
+    padding: 5px;
+    font-size: 10pt;
+    &.essential,
+    &.sport {
+        background-color: $purple;
+    }
+    &.game,
+    &.practical {
+        background-color: $pink;
+    }
+    &.professional {
+        background-color: $green;
+    }
+}
+
 .center-all {
     padding: 0;
     display: flex;

@@ -28,7 +28,13 @@ const ItemCard = props => {
                             </tr>
                             <tr>
                                 <td className="label">Type:</td>
-                                <td>{props.item.type}</td>
+                                <td>
+                                    <span
+                                        className={`item-type ${props.item.type.toLowerCase()}`}
+                                    >
+                                        {props.item.type}
+                                    </span>
+                                </td>
                             </tr>
                         </tbody>
                     </table>

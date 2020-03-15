@@ -24,12 +24,21 @@ function DetailsPage() {
         dispatch(categoryActions[categoryMethod](itemId));
     });
 
-    return (
-        <div className="DetailsPage container">
-            <h1>{itemDetails.name}</h1>
-            <h2>{itemDetails.type}</h2>
-            <p>{itemDetails.detail}</p>
-        </div>
+    return itemDetails && itemDetails.type ? (
+        <>
+            <div className="DetailsPage container">
+                <h1>{itemDetails.name}</h1>
+                <span className={`item-type ${itemDetails.type.toLowerCase()}`}>
+                    {itemDetails.type}
+                </span>
+                <p>
+                    <br />
+                    {itemDetails.detail}
+                </p>
+            </div>
+        </>
+    ) : (
+        <></>
     );
 }
 

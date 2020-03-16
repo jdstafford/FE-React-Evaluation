@@ -25,7 +25,7 @@ const ProfileMenu = props => {
     return (
         <div className="ProfileMenu">
             <div className={`dropdown ${menuActive ? 'is-active' : ''}`}>
-                <div className="dropdown-trigger">
+                <div className="dropdown-trigger is-radiusless">
                     <button
                         className="button"
                         aria-haspopup="true"
@@ -41,8 +41,12 @@ const ProfileMenu = props => {
                         </span>
                     </button>
                 </div>
-                <div className="dropdown-menu" id="dropdown-menu" role="menu">
-                    <div className="dropdown-content">
+                <div
+                    className="dropdown-menu is-radiusless"
+                    id="dropdown-menu"
+                    role="menu"
+                >
+                    <div className="dropdown-content is-radiusless">
                         <div className="dropdown-item">
                             <button onClick={handleLogout}>Logout</button>
                         </div>

@@ -7,9 +7,16 @@
         border: none;
         font-size: 14px;
         font-weight: bold;
+        outline: 0;
         &:hover,
+        &:focus,
         &:active {
+            outline: 0;
             color: $orange;
         }
+    }
+
+    .dropdown-content {
+        background-color: $dark-gray;
     }
 }

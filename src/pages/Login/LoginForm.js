@@ -9,7 +9,7 @@ function LoginForm() {
         username: '',
         password: ''
     });
-    const [isLoading, setIsLoading] = useState({ isLoading: '' });
+    const [isLoading, setIsLoading] = useState('');
     const { username, password } = inputValues;
 
     function handleChange(e) {

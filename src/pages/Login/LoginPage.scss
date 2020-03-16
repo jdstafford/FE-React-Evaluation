@@ -5,17 +5,25 @@
     width: 100vw;
     background-color: $light-gray;
     .LoginModal {
-        width: 800px;
-        height: 380px;
+        @media only screen and (min-width: $tablet) {
+            width: 800px;
+            height: 380px;
+        }
         border: 10px solid $white;
         padding: 0;
         .Logo {
+            @media only screen and (max-width: $desktop) {
+                height: 150px;
+            }
             background-color: $gray;
             img {
                 width: 200px;
             }
         }
         .Form {
+            @media only screen and (max-width: $desktop) {
+                height: 300px;
+            }
             font-size: 18px;
             font-weight: bold;
             color: $white;

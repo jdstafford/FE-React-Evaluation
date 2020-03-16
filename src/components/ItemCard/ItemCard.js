@@ -12,7 +12,7 @@ const ItemCard = props => {
 
     return props.item ? (
         <>
-            <div className="ItemCard column is-one-third">
+            <div className="ItemCard column is-one-third-desktop is-half-tablet">
                 <div
                     className="box is-radiusless"
                     onClick={() => handleClick(props.item.id)}
